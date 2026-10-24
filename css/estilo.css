@@ -1,0 +1,105 @@
+:root {
+  --fundo: #f1f3f3;
+  --tinta: #14201f;
+  --suave: #56635f;
+  --borda: #d9dedd;
+  --primaria: #1f5bbf;
+  --estrela: #b7791f;
+  --estrela-vazia: #cfd6d4;
+  --lido: #1d7a4d;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.app { max-width: 980px; padding-top: 1.5rem; padding-bottom: 3rem; }
+
+/* Topo */
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+.titulo-app, .titulo-secao, .livro-titulo {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 700;
+  margin: 0;
+}
+.titulo-app { font-size: clamp(1.5rem, 6vw, 2.25rem); display: flex; align-items: center; gap: .6rem; }
+.titulo-app i { color: var(--primaria); font-size: .85em; }
+.btn-registrar { white-space: nowrap; font-weight: 600; padding: .6rem 1rem; border-radius: .6rem; }
+.btn-primary { --bs-btn-bg: var(--primaria); --bs-btn-border-color: var(--primaria); --bs-btn-hover-bg: #194c9f; --bs-btn-hover-border-color: #194c9f; }
+
+@media (max-width: 420px) {
+  .btn-registrar span { display: none; }
+  .btn-registrar { padding: .65rem .85rem; }
+}
+
+/* Indicadores */
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: 1.5rem;
+}
+.indicador { padding: .85rem .5rem .85rem 0; }
+.indicador:last-child { grid-column: 1 / -1; }
+.indicador + .indicador { border-left: 0; }
+.indicador-rotulo {
+  display: block; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--suave);
+}
+.indicador strong { font-family: 'Source Serif 4', Georgia, serif; font-size: 1.5rem; }
+
+@media (min-width: 768px) {
+  .indicadores { grid-template-columns: repeat(5, 1fr); }
+  .indicador:last-child { grid-column: auto; }
+  .indicador { padding: .9rem 1rem; }
+  .indicador:first-child { padding-left: 0; }
+  .indicador + .indicador { border-left: 1px solid var(--borda); }
+}
+
+/* Formulário */
+.cartao-form {
+  background: #fff; border: 1px solid var(--borda); border-radius: 1rem;
+  padding: 1.25rem; margin-bottom: 1.5rem;
+}
+@media (min-width: 576px) { .cartao-form { padding: 1.5rem; } }
+.titulo-secao { font-size: 1.4rem; margin-bottom: 1rem; }
+.form-label { font-size: .88rem; color: var(--suave); margin-bottom: .3rem; }
+.opcional { font-weight: 400; opacity: .75; }
+.form-control { background: var(--fundo); border-color: var(--borda); border-radius: .6rem; padding: .65rem .8rem; font-size: 1rem; }
+.form-control:focus { background: #fff; border-color: var(--primaria); box-shadow: 0 0 0 .2rem rgba(31, 91, 191, .18); }
+.btn { border-radius: .6rem; padding: .6rem 1.1rem; }
+
+/* Estrelas de entrada */
+.estrelas-entrada { display: flex; gap: .15rem; }
+.estrelas-entrada button {
+  background: none; border: 0; padding: .25rem; font-size: 1.9rem; line-height: 1;
+  color: var(--estrela-vazia); cursor: pointer; border-radius: .4rem;
+}
+.estrelas-entrada button.ativa { color: var(--estrela); }
+.estrelas-entrada button:focus-visible { outline: 2px solid var(--primaria); }
+
+/* Lista */
+.lista { display: flex; flex-direction: column; }
+.livro { padding: 1.25rem 0; border-top: 1px solid var(--borda); }
+.livro:first-child { border-top: 0; padding-top: 0; }
+.livro-cabecalho { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.livro-titulo { font-size: 1.35rem; line-height: 1.25; overflow-wrap: anywhere; }
+.selo {
+  flex: none; font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: #fff; padding: .25rem .5rem; border-radius: .35rem;
+}
+.selo-lendo { background: var(--primaria); }
+.selo-lido { background: var(--lido); }
+.livro-autor { color: var(--suave); font-size: 1.05rem; margin-top: .15rem; overflow-wrap: anywhere; }
+.livro-meta { color: var(--suave); font-size: .92rem; margin-top: .35rem; }
+.livro-estrelas { color: var(--estrela); letter-spacing: .1rem; margin: .5rem 0; font-size: 1.05rem; }
+.livro-estrelas .vazia { color: var(--estrela-vazia); }
+.livro-comentarios { white-space: pre-wrap; overflow-wrap: anywhere; margin: .4rem 0 0; }
+.livro-acoes { display: flex; gap: .5rem; margin-top: .9rem; }
+.livro-acoes .btn { background: #fff; border: 1px solid var(--borda); font-weight: 500; font-size: .95rem; padding: .45rem .9rem; }
+.livro-acoes .btn:hover { background: var(--fundo); }
+
+.vazio { text-align: center; color: var(--suave); padding: 2.5rem 1rem; border: 1px dashed var(--borda); border-radius: 1rem; }
+.vazio i { font-size: 2rem; color: var(--primaria); margin-bottom: .75rem; display: block; }
