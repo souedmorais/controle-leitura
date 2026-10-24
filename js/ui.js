@@ -174,7 +174,7 @@
   }
 
   function avisoErro(mensagem) {
-    return Swal.fire({ icon: 'error', title: 'Ops', text: mensagem, confirmButtonText: 'Ok', confirmButtonColor: '#1f5bbf' });
+    return Swal.fire({ icon: 'error', title: 'Ops', text: mensagem, confirmButtonText: 'Ok', confirmButtonColor: '#1d7a4d' });
   }
 
   function confirmarExclusao(livro) {

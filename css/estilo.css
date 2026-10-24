@@ -7,6 +7,8 @@
   --estrela: #b7791f;
   --estrela-vazia: #cfd6d4;
   --lido: #1d7a4d;
+  --botao: #1d7a4d;
+  --botao-hover: #176640;
 }
 
 body {
@@ -27,7 +29,13 @@ body {
 .titulo-app { font-size: clamp(1.5rem, 6vw, 2.25rem); display: flex; align-items: center; gap: .6rem; }
 .titulo-app i { color: var(--primaria); font-size: .85em; }
 .btn-registrar { white-space: nowrap; font-weight: 600; padding: .6rem 1rem; border-radius: .6rem; }
-.btn-primary { --bs-btn-bg: var(--primaria); --bs-btn-border-color: var(--primaria); --bs-btn-hover-bg: #194c9f; --bs-btn-hover-border-color: #194c9f; }
+.btn-primary {
+  --bs-btn-bg: var(--botao); --bs-btn-border-color: var(--botao);
+  --bs-btn-hover-bg: var(--botao-hover); --bs-btn-hover-border-color: var(--botao-hover);
+  --bs-btn-active-bg: var(--botao-hover); --bs-btn-active-border-color: var(--botao-hover);
+  --bs-btn-disabled-bg: var(--botao); --bs-btn-disabled-border-color: var(--botao);
+  --bs-btn-focus-shadow-rgb: 29, 122, 77;
+}
 
 @media (max-width: 420px) {
   .btn-registrar span { display: none; }
